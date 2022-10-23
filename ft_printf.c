@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:55:54 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 23:57:22 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/24 00:27:12 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,13 @@ int check(va_list list , char c)
     else if ( c == 'p')
     {
         ft_putstr("0x");
-        return (ft_hexa(va_arg(list,long long unsigned int)
+        return (ft_hexa(va_arg(list, unsigned long)
         , "0123456789abcdef") + 2);
     }
     else if ( c == 'x')
-        return ft_hexa(va_arg(list, int),"0123456789abcdef");
+        return ft_hexa(va_arg(list, unsigned int),"0123456789abcdef");
     else if ( c == 'X')
-        return ft_hexa(va_arg(list, int),"0123456789ABCDEF");
+        return ft_hexa(va_arg(list, unsigned int),"0123456789ABCDEF");
     else if ( c == 'u')
         return ft_putnbru(va_arg(list,long unsigned int));
     return 0;

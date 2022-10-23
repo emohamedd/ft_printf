@@ -5,51 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/23 19:34:30 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 23:52:38 by emohamed         ###   ########.fr       */
+/*   Created: 2022/10/24 00:19:42 by emohamed          #+#    #+#             */
+/*   Updated: 2022/10/24 00:19:58 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/02 17:38:54 by emohamed          #+#    #+#             */
-/*   Updated: 2022/04/03 16:06:30 by emohamed         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include <unistd.h>
 #include "ft_printf.h"
 
-int	ft_putnbr(long int nb)
-{
-    int c ;
-	char s;
-
-    c = 0;
-	if (nb < 0)
-	{
-		c += ft_putchar('-');
-		nb = -nb;
+int ft_putnbr(long int n) {
+	int counter = 0;
+	if (n < 0) {
+		counter += ft_putchar('-');
+		n *= -1;
 	}
-	if (nb > 9)
-	{
-		c += ft_putnbr(nb / 10);
-		c += ft_putnbr(nb % 10);
-	}
-	s = nb + '0';
-	if (nb >= 0 && nb <= 9)
-		c += ft_putchar(s);
-    return (c);
+	if (n > 9)
+		counter += ft_putnbr(n / 10);
+	counter += ft_putchar((n % 10) + '0');
+	return counter;
 }
 
-// #include <stdio.h>
-
-// int main()
-// {
-// 	printf("%u",-10);
-// }

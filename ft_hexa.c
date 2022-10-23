@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 20:01:44 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 23:41:37 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/24 00:27:25 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <unistd.h>
 #include "ft_printf.h"
 
-int ft_hexa(unsigned int n,  char* b)
+int ft_hexa(unsigned long n,  char* b)
 {
     int count;
     count = 0;
-    if (count >= 16)
+    if (n >= 16)
     {   
-        count += ft_hexa(n/16, b);
+        count += ft_hexa(n / 16, b);
         count += ft_hexa(n % 16, b);
     }
     else
