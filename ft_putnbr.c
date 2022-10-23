@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 19:34:30 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 22:43:53 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:52:38 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 int	ft_putnbr(long int nb)
 {
     int c ;
+	char s;
 
     c = 0;
 	if (nb < 0)
@@ -40,8 +41,9 @@ int	ft_putnbr(long int nb)
 		c += ft_putnbr(nb / 10);
 		c += ft_putnbr(nb % 10);
 	}
-	else
-		c += ft_putchar(nb + 48);
+	s = nb + '0';
+	if (nb >= 0 && nb <= 9)
+		c += ft_putchar(s);
     return (c);
 }
 

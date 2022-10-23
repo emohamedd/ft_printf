@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 19:26:54 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 22:47:04 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:54:03 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,10 @@ int	ft_putstr(char *ch)
 		ft_putstr("(null)");
 		return (6);
 	}
-
 	while (ch[i] != '\0')
 	{
-		write (1, &ch[i], sizeof(ch[i]));
-	i++;
+		write (1, &ch[i], 1);
+		i++;
 	}
     return i;
 }

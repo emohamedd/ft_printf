@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:55:54 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 23:39:35 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/23 23:57:22 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ int check(va_list list , char c)
     if ( c == 'c')
         return (ft_putchar(va_arg(list, int)));
     else if ( c =='s' )
-        return (ft_putstr(va_arg(list, char*)));
+        return (ft_putstr(va_arg(list, char *)));
     else if ( c == 'd' || c == 'i')
         return (ft_putnbr(va_arg(list, int)));
     else if ( c == 'p')
     {
         ft_putstr("0x");
-        return (ft_hexa(va_arg(list,long long unsigned int),"0123456789abcdef") + 2);
-        
+        return (ft_hexa(va_arg(list,long long unsigned int)
+        , "0123456789abcdef") + 2);
     }
     else if ( c == 'x')
         return ft_hexa(va_arg(list, int),"0123456789abcdef");
@@ -37,13 +37,12 @@ int check(va_list list , char c)
 }
 int    ft_printf(const char *str, ...)
 {   
+    va_list ptr;
     int c ;
     int i;
     
      i = 0;
      c = 0;
-    va_list ptr;
-
     va_start(ptr,str);
     while(str[i])
     {
