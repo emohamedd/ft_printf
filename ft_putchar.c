@@ -6,14 +6,15 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 15:00:42 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 21:43:47 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/24 03:49:06 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "ft_printf.h"
-int ft_putchar(char c)
+
+int	ft_putchar(char c)
 {
-    write(1,&c,1);
-    return 1;
+	write(1, &c, 1);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 22:24:05 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 23:54:53 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/24 03:53:07 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_putnbru(unsigned int nb)
 {
-    int c;
-    c  = 0;
-     c += ft_putnbr(nb);  
-     return c;
+	int	c;
+
+	c = 0;
+	c += ft_putnbr(nb);
+	return (c);
 }

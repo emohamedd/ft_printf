@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 19:26:54 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/23 23:54:03 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/24 03:53:18 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,5 @@ int	ft_putstr(char *ch)
 		write (1, &ch[i], 1);
 		i++;
 	}
-    return i;
+	return (i);
 }
