@@ -6,7 +6,7 @@
 /*   By: emohamed <emohamed@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 21:55:54 by emohamed          #+#    #+#             */
-/*   Updated: 2022/10/24 03:57:08 by emohamed         ###   ########.fr       */
+/*   Updated: 2022/10/25 10:01:39 by emohamed         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	check(va_list list, char c)
 	else if (c == 'p')
 	{
 		ft_putstr("0x");
-		return (ft_hexa(va_arg(list, unsigned long)
-		, "0123456789abcdef") + 2);
+		return (ft_hexa(va_arg(list, unsigned long), "0123456789abcdef") + 2);
 	}
 	else if (c == 'x')
 		return (ft_hexa(va_arg(list, unsigned int), "0123456789abcdef"));
@@ -35,30 +34,31 @@ int	check(va_list list, char c)
 		return (ft_putnbru(va_arg(list, long unsigned int)));
 	return (0);
 }
-int    ft_printf(const char *str, ...)
-{   
-    va_list ptr;
-    int c ;
-    int i;
-    
-     i = 0;
-     c = 0;
-    va_start(ptr,str);
-    while(str[i])
-    {
-        if (str[i] == '%')
-        {
-            i++;
-            if(str[i] == '%')
-                c += ft_putchar('%');
-            c +=check(ptr,str[i]);
-        }
-        else 
-            c += ft_putchar(str[i]);
-        i++;
-    }
-    va_end(ptr);
-    return c;
+
+int	ft_printf(const char *str, ...)
+{
+	int		i;
+	int		c;
+	va_list	ptr;
+
+	i = 0;
+	c = 0;
+	va_start(ptr, str);
+	while (str[i])
+	{
+		if (str[i] == '%')
+		{
+			i++;
+			if (str[i] == '%')
+			c += ft_putchar('%');
+			c += check(ptr, str[i]);
+		}
+		else
+			c += ft_putchar(str[i]);
+			i++;
+	}
+	va_end(ptr);
+	return (c);
 }
 // int main()
 // {
